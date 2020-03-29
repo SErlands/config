@@ -1,27 +1,11 @@
-" Mikael Henriksson .vimrc for the vim editor.
-" Updated: 2018-01-14
-" Updated: 2018-09-03
-" Updated: 2019-09-10 - Took some things from Meng Wang. Thank you boy!
+" Samuel Erlands .vimrc for the vim editor.
+" Base taken from Mikael Henriksson
 
 " --- Vundle package manager for Vim ---
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
 
-Plugin 'VundleVim/Vundle.vim'
-"Plugin 'Valloric/YouCompleteMe'
-Plugin 'agude/vim-eldar'
-Plugin 'tpope/vim-repeat'
-Plugin 'svermeulen/vim-easyclip'
-Plugin 'morhetz/gruvbox'
-Plugin 'junegunn/fzf'
-Plugin 'powerline/powerline-fonts'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'nachumk/systemverilog.vim'
-
-call vundle#end()
 filetype plugin indent on
 
 " --- YouCompleteMe settings. ---
@@ -63,4 +47,5 @@ autocmd BufEnter *.tpp :setlocal filetype=cpp
 
 " --- Other settings ---
 syntax on
+set background=dark
 colorscheme gruvbox 
