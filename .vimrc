@@ -2,15 +2,16 @@
 " Updated: 2018-01-14
 " Updated: 2018-09-03
 " Updated: 2019-09-10 - Took some things from Meng Wang. Thank you boy!
-" Updated: 2020-15-10 - Copy from Mikeal, thx!
+" Updated: 2020-15-10 - Copy from Mikeal, thx! (And made som small changes)
 
 " --- Vundle package manager for Vim ---
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'agude/vim-eldar'
 Plugin 'tpope/vim-repeat'
 Plugin 'svermeulen/vim-easyclip'
@@ -22,16 +23,25 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'nachumk/systemverilog.vim'
 
 call vundle#end()
+
 filetype plugin indent on
 
 " --- YouCompleteMe settings. ---
-let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
-let g:ycm_enable_diagnostic_signs = 0
-let g:ycm_enable_diagnostic_highlighting = 0
-if v:version < 705
-	let g:loaded_youcompleteme = 1
-endif
+"let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+"let g:ycm_enable_diagnostic_signs = 0
+"let g:ycm_enable_diagnostic_highlighting = 0
+"if v:version < 705
+"	let g:loaded_youcompleteme = 1
+"endif
 	
+"--- Add colorschemes ---
+packadd! dracula
+
+"--- Enable true colors ---
+if (has("nvim"))
+  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
 
 " --- Airline settings. ---
 let g:airline_powerline_fonts = 0
@@ -50,6 +60,7 @@ set laststatus=2
 
 " --- No wrap.
 "set nowrap
+set wrap
 
 " --- Use whitespaces for tabs ---
 filetype plugin indent on
@@ -60,4 +71,4 @@ set expandtab
 " --- Other settings ---
 syntax on
 set background=dark
-colorscheme gruvbox 
+colorscheme dracula 
