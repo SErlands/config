@@ -1,7 +1,8 @@
-" Mikael Henriksson .vimrc for the vim editor.
+" Samuel Erlands .vimrc for the vim editor.
 " Updated: 2018-01-14
 " Updated: 2018-09-03
 " Updated: 2019-09-10 - Took some things from Meng Wang. Thank you boy!
+" Updated: 2020-15-10 - Copy from Mikeal, thx!
 
 " --- Vundle package manager for Vim ---
 set nocompatible
@@ -10,7 +11,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'agude/vim-eldar'
 Plugin 'tpope/vim-repeat'
 Plugin 'svermeulen/vim-easyclip'
@@ -35,7 +36,7 @@ endif
 
 " --- Airline settings. ---
 let g:airline_powerline_fonts = 0
-let g:airline_theme = 'bubblegum'
+let g:airline_theme = 'seagull'
 
 " --- Line numbering, toggle with Ctrl+L+L
 set number
@@ -49,7 +50,7 @@ set clipboard=unnamedplus
 set laststatus=2
 
 " --- No wrap.
-set nowrap
+"set nowrap
 
 " --- Use whitespaces for tabs ---
 filetype plugin indent on
@@ -57,10 +58,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
-" --- Specialfile treatments ---
-autocmd BufEnter *.tcc :setlocal filetype=cpp
-autocmd BufEnter *.tpp :setlocal filetype=cpp
-
 " --- Other settings ---
 syntax on
+set background=dark
 colorscheme gruvbox 
