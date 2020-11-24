@@ -4,6 +4,7 @@
 " Updated: 2019-09-10 - Took some things from Meng Wang. Thank you boy!
 " Updated: 2020-15-10 - Copy from Mikeal, thx! (And made som small changes)
 " Updated: 2020-23-11 - Adding nerdtree and cleaning packages
+" Updated: 2020-24-11 - Added visincr
 
 " --- Vundle package manager for Vim ---
 set nocompatible
@@ -12,16 +13,16 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " Remember: run :PluginInstall
     Plugin 'VundleVim/Vundle.vim' " Required for Vundle too work
-"    Plugin 'Valloric/YouCompleteMe' " Autocomple, needs vim to be compiled with phyton3
+"    Plugin 'ycm-core/YouCompleteMe' " Autocomple, needs vim to be compiled with phyton3
     Plugin 'svermeulen/vim-easyclip' " Making the clipboard better
     Plugin 'morhetz/gruvbox' " Nice color scheme
     Plugin 'vim-airline/vim-airline' " Statusbar 
     Plugin 'vim-airline/vim-airline-themes' " Statusbar themes
     Plugin 'nachumk/systemverilog.vim' " System verilog intendention and syntax scripts
     Plugin 'preservim/nerdtree' " File tree
+    Plugin 'exvim/ex-visincr' " Collum incrase/decrease of numbers
 
 call vundle#end()
-
 filetype plugin indent on
 
 " --- Set leader
