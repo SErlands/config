@@ -19,6 +19,7 @@ call vundle#begin()
     Plugin 'vim-airline/vim-airline-themes' " Statusbar themes
     Plugin 'nachumk/systemverilog.vim' " System verilog intendention and syntax scripts
     Plugin 'preservim/nerdtree' " File tree
+    Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 
 call vundle#end()
 
@@ -34,9 +35,6 @@ let mapleader = " "
 "if v:version < 705
 "	let g:loaded_youcompleteme = 1
 "endif
-	
-" --- Add colorschemes ---
-packadd! dracula
 
 " --- Enable true colors ---
 if (has("nvim"))
@@ -76,4 +74,4 @@ set expandtab
 " --- Other settings ---
 syntax on
 set background=dark
-colorscheme gruvbox 
+colorscheme gruvbox
