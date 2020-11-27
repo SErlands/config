@@ -4,6 +4,7 @@
 " Updated: 2019-09-10 - Took some things from Meng Wang. Thank you boy!
 " Updated: 2020-15-10 - Copy from Mikeal, thx! (And made som small changes)
 " Updated: 2020-23-11 - Adding nerdtree and cleaning packages
+" Updated: 2020-24-11 - Added visincr
 
 " --- Vundle package manager for Vim ---
 set nocompatible
@@ -12,29 +13,19 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " Remember: run :PluginInstall
     Plugin 'VundleVim/Vundle.vim' " Required for Vundle too work
-"    Plugin 'Valloric/YouCompleteMe' " Autocomple, needs vim to be compiled with phyton3
     Plugin 'svermeulen/vim-easyclip' " Making the clipboard better
     Plugin 'morhetz/gruvbox' " Nice color scheme
     Plugin 'vim-airline/vim-airline' " Statusbar 
     Plugin 'vim-airline/vim-airline-themes' " Statusbar themes
     Plugin 'nachumk/systemverilog.vim' " System verilog intendention and syntax scripts
     Plugin 'preservim/nerdtree' " File tree
-    Plugin 'neoclide/coc.nvim', {'branch': 'release'}
+    Plugin 'exvim/ex-visincr' " Collum incrase/decrease of numbers
 
 call vundle#end()
-
 filetype plugin indent on
 
 " --- Set leader
 let mapleader = " "
-
-" --- YouCompleteMe settings. ---
-"let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
-"let g:ycm_enable_diagnostic_signs = 0
-"let g:ycm_enable_diagnostic_highlighting = 0
-"if v:version < 705
-"	let g:loaded_youcompleteme = 1
-"endif
 
 " --- Enable true colors ---
 if (has("nvim"))
@@ -57,8 +48,14 @@ set clipboard=unnamedplus
 " --- Open bar.
 set laststatus=2
 
-" --- Wrap.
+" --- Basics.
+syntax on
 set wrap
+set smartindent
+set incsearch " Search word before hiting enter
+set smartcase " No case senetive search until uppercase is enterd
+set colorcolumn=80
+highlight Colorcolumn ctermbg=0 guibg=lightgrey
 
 " --- Nerdtree settings.
 nnoremap <leader>e :NERDTreeToggle<CR>
@@ -71,7 +68,6 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
-" --- Other settings ---
-syntax on
+" --- Theme ---
 set background=dark
 colorscheme gruvbox
