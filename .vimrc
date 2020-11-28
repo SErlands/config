@@ -20,6 +20,7 @@ call vundle#begin()
     Plugin 'nachumk/systemverilog.vim' " System verilog intendention and syntax scripts
     Plugin 'preservim/nerdtree' " File tree
     Plugin 'exvim/ex-visincr' " Collum incrase/decrease of numbers
+    Plugin 'neoclide/coc.nvim'
 
 call vundle#end()
 filetype plugin indent on
@@ -40,7 +41,7 @@ let g:airline_theme = 'seagull'
 " --- Line numbering, toggle with Ctrl+L+L
 set number
 set relativenumber
-nmap <C-L><C-L> :set invrelativenumber<CR>
+nmap <leader>l :set invrelativenumber<CR>
 
 " --- Clipboard setting
 set clipboard=unnamedplus
@@ -57,6 +58,13 @@ set smartcase " No case senetive search until uppercase is enterd
 set colorcolumn=80
 highlight Colorcolumn ctermbg=0 guibg=lightgrey
 
+" --- Split control
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+set splitbelow
+
 " --- Nerdtree settings.
 nnoremap <leader>e :NERDTreeToggle<CR>
 let NERDTreeShowLineNumbers=1
@@ -71,3 +79,6 @@ set expandtab
 " --- Theme ---
 set background=dark
 colorscheme gruvbox
+
+" --- Coc-settings
+source ~/config/coc_config.vim
