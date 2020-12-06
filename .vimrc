@@ -1,8 +1,4 @@
-nmap <F5> <Plug>(lcn-menu)
-" Or map each action separately
-nmap <silent>K <Plug>(lcn-hover)
-nmap <silent> gd <Plug>(lcn-definition)
-nmap <silent> <F2> <Plug>(lcn-rename)" Samuel Erlands .vimrc
+" Samuel Erlands .vimrc
 " Updated: 2018-01-14
 " Updated: 2018-09-03
 " Updated: 2019-09-10 - Took some things from Meng Wang. Thank you boy!
@@ -17,7 +13,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " Remember: run :PluginInstall
 Plugin 'VundleVim/Vundle.vim' " Required for Vundle too work
-"    Plugin 'ycm-core/YouCompleteMe' " Autocomple, needs vim to be compiled with phyton3
 Plugin 'svermeulen/vim-easyclip' " Making the clipboard better
 Plugin 'morhetz/gruvbox' " Nice color scheme
 Plugin 'vim-airline/vim-airline' " Statusbar 
@@ -25,23 +20,13 @@ Plugin 'vim-airline/vim-airline-themes' " Statusbar themes
 Plugin 'nachumk/systemverilog.vim' " System verilog intendention and syntax scripts
 Plugin 'preservim/nerdtree' " File tree
 Plugin 'exvim/ex-visincr' " Collum incrase/decrease of numbers
+Plugin 'neoclide/coc.nvim'
 
 call vundle#end()
 filetype plugin indent on
 
 " --- Set leader
 let mapleader = " "
-
-" --- YouCompleteMe settings. ---
-"let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
-"let g:ycm_enable_diagnostic_signs = 0
-"let g:ycm_enable_diagnostic_highlighting = 0
-"if v:version < 705
-"	let g:loaded_youcompleteme = 1
-"endif
-
-" --- Add colorschemes ---
-packadd! dracula
 
 " --- Enable true colors ---
 if (has("nvim"))
@@ -56,7 +41,7 @@ let g:airline_theme = 'seagull'
 " --- Line numbering, toggle with Ctrl+L+L
 set number
 set relativenumber
-nmap <C-L><C-L> :set invrelativenumber<CR>
+nmap <leader>l :set invrelativenumber<CR>
 
 " --- Small commands
 " Add a line above and enter normal mode
@@ -70,8 +55,20 @@ set clipboard=unnamedplus
 " --- Open bar.
 set laststatus=2
 
-" --- Wrap.
+" --- Basics.
+syntax on
 set wrap
+set smartindent
+set incsearch " Search word before hiting enter
+set smartcase " No case senetive search until uppercase is enterd
+set colorcolumn=80
+
+" --- Split control
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+set splitbelow
 
 " --- Nerdtree settings.
 nnoremap <leader>e :NERDTreeToggle<CR>
@@ -84,7 +81,9 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
-" --- Other settings ---
-syntax on 
+" --- Theme ---
 set background=dark
-colorscheme gruvbox 
+colorscheme gruvbox
+
+" --- Coc-settings
+source ~/config/coc_config.vim
