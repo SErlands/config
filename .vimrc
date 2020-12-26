@@ -75,8 +75,7 @@ set splitright
 nnoremap <leader>e :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen = 1
 let NERDTreeShowLineNumbers=1
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree")
-    && b:NERDTree.isTabTree()) | q | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " --- Use whitespaces for tabs ---
 filetype plugin indent on
