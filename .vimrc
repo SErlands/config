@@ -38,7 +38,7 @@ endif
 let g:airline_powerline_fonts = 0 
 let g:airline_theme = 'seagull'
 
-" --- Line numbering, toggle with Ctrl+L+L
+" --- Line numbering 
 set number
 set relativenumber
 nmap <leader>l :set invrelativenumber<CR>
@@ -51,7 +51,7 @@ set laststatus=2
 
 " --- Basics.
 syntax on
-set wrap
+set nowrap
 set smartindent
 set incsearch " Search word before hiting enter
 set smartcase " No case senetive search until uppercase is enterd
@@ -64,9 +64,11 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 set splitbelow
+set splitright 
 
 " --- Nerdtree settings.
 nnoremap <leader>e :NERDTreeToggle<CR>
+let NERDTreeQuitOnOpen = 1
 let NERDTreeShowLineNumbers=1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
