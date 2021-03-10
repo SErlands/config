@@ -2,7 +2,7 @@
 " Updated: 2018-01-14
 " Updated: 2018-09-03
 " Updated: 2019-09-10 - Took some things from Meng Wang. Thank you boy!
-" Updated: 2020-15-10 - Copy from Mikeal, thx! (And made som small changes)
+" Updated: 2020-15-10 - Copy from Mikeal, thx! (And made some small changes)
 " Updated: 2020-23-11 - Adding nerdtree and cleaning packages
 " Updated: 2020-24-11 - Added visincr
 " Updated: 2021-11-01 - Added split controls
@@ -18,9 +18,9 @@ Plugin 'svermeulen/vim-easyclip' " Making the clipboard better
 Plugin 'morhetz/gruvbox' " Nice color scheme
 Plugin 'vim-airline/vim-airline' " Statusbar 
 Plugin 'vim-airline/vim-airline-themes' " Statusbar themes
-Plugin 'nachumk/systemverilog.vim' " System verilog intendention and syntax scripts
+Plugin 'nachumk/systemverilog.vim' " System verilog indentation and syntax scripts
 Plugin 'preservim/nerdtree' " File tree
-Plugin 'exvim/ex-visincr' " Collum incrase/decrease of numbers
+Plugin 'exvim/ex-visincr' " Column increase/decrease of numbers
 Plugin 'neoclide/coc.nvim'
 
 call vundle#end()
@@ -62,9 +62,9 @@ set laststatus=2
 syntax on
 set nowrap
 set smartindent
-set incsearch " Search word before hiting enter
-set smartcase " No case senetive search until uppercase is enterd
-set colorcolumn=96
+set incsearch " Search word before hitting enter
+set smartcase " No case sensitive search until uppercase is entered
+set colorcolumn=80
 
 " --- Fast access to .vimrc file
 nnoremap <leader>rc :e ~\.vimrc <CR>
@@ -79,6 +79,11 @@ nnoremap <leader>< 10<C-W><
 nnoremap <leader>> 10<C-W>>
 set splitbelow
 set splitright 
+
+" --- Spell checking
+"  Use: setlocal spell
+set spelllang=en
+set spellfile=~/config/en.utf-8.add
 
 " --- Nerdtree settings.
 nnoremap <leader>e :NERDTreeToggle<CR>
