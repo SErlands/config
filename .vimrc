@@ -5,6 +5,7 @@
 " Updated: 2020-15-10 - Copy from Mikeal, thx! (And made som small changes)
 " Updated: 2020-23-11 - Adding nerdtree and cleaning packages
 " Updated: 2020-24-11 - Added visincr
+" Updated: 2021-11-01 - Added split controls
 
 " --- Vundle package manager for Vim ---
 set nocompatible
@@ -36,7 +37,7 @@ endif
 
 " --- Airline settings. ---
 let g:airline_powerline_fonts = 0 
-let g:airline_theme = 'seagull'
+let g:airline_theme = 'bubblegum'
 
 " --- Line numbering 
 set number
@@ -48,6 +49,8 @@ nmap <leader>l :set invrelativenumber<CR>
 nmap <C-k> O<ESc>
 " Add a line below and enter normal mode
 nmap <C-j> o<ESc>
+" Adds so that esc also removes search highlights
+nnoremap <esc> :noh<return><esc>
 
 " --- Clipboard setting
 set clipboard=unnamedplus
@@ -61,13 +64,19 @@ set nowrap
 set smartindent
 set incsearch " Search word before hiting enter
 set smartcase " No case senetive search until uppercase is enterd
-set colorcolumn=80
+set colorcolumn=96
+
+" --- Fast access to .vimrc file
+nnoremap <leader>rc :e ~\.vimrc <CR>
+nnoremap <leader>rcu :source ~\.vimrc<CR>
 
 " --- Split control
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+nnoremap <leader>< 10<C-W><
+nnoremap <leader>> 10<C-W>>
 set splitbelow
 set splitright 
 
