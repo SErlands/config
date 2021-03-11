@@ -64,7 +64,7 @@ set nowrap
 set smartindent
 set incsearch " Search word before hitting enter
 set smartcase " No case sensitive search until uppercase is entered
-set colorcolumn=80
+set colorcolumn=96 " 96 for campus office 80 for thinlink
 
 " --- Fast access to .vimrc file
 nnoremap <leader>rc :e ~\.vimrc <CR>
