@@ -97,6 +97,9 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+" --- File specific settings
+au Filetype tex set spell
+
 " --- Theme ---
 set background=dark
 colorscheme gruvbox
