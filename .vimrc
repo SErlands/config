@@ -91,6 +91,9 @@ let NERDTreeQuitOnOpen = 1
 let NERDTreeShowLineNumbers=1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" Hide all the annoying files that texstudio creates
+let NERDTreeIgnore=['\.aux$', '\.blg$', '\.idx$', '\.log$', '\.toc$', '\.bbl$', '\.out$', '\.gz$', '\.pdf$']
+
 " --- Use whitespaces for tabs ---
 filetype plugin indent on
 set tabstop=4
@@ -98,7 +101,7 @@ set shiftwidth=4
 set expandtab
 
 " --- File specific settings
-au Filetype tex set spell
+au Filetype tex set spell " Spell check on when in .tex files
 
 " --- Theme ---
 set background=dark
