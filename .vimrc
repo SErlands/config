@@ -92,7 +92,7 @@ let NERDTreeShowLineNumbers=1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Hide all the annoying files that texstudio creates
-let NERDTreeIgnore=['\.aux$', '\.blg$', '\.idx$', '\.log$', '\.toc$', '\.bbl$', '\.out$', '\.gz$', '\.pdf$']
+let NERDTreeIgnore=['\.aux$', '\.blg$', '\.idx$', '\.log$', '\.toc$', '\.out$', '\.gz$', '\.pdf$']
 
 " --- Use whitespaces for tabs ---
 filetype plugin indent on
