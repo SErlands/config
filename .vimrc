@@ -44,13 +44,15 @@ set number
 set relativenumber
 nmap <leader>l :set invrelativenumber<CR>
 
-" --- Small commands
+" --- Key mappings
 " Add a line above and enter normal mode
 nmap <C-k> O<ESc>
 " Add a line below and enter normal mode
 nmap <C-j> o<ESc>
 " Adds so that esc also removes search highlights
 nnoremap <esc> :noh<return><esc>
+" Remove Ex mode and adds so qq record a macro and Q runs it
+map Q @q
 
 " --- Clipboard setting
 set clipboard=unnamedplus
