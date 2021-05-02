@@ -60,7 +60,7 @@ set laststatus=2
 
 " --- Basics.
 syntax on
-set nowrap
+set wrap
 set smartindent
 set incsearch " Search word before hitting enter
 set smartcase " No case sensitive search until uppercase is entered
